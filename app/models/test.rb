@@ -5,7 +5,7 @@ class Test < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :users, through: :results, dependent: :destroy
 
-  def self.get_by_category(category_title)
+  def self.by_category(category_title)
     joins(:category)
       .where(categories: {title: category_title})
       .order(title: :desc)

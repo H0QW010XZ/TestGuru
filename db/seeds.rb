@@ -16,15 +16,15 @@ user_names = %w[Jenifer Arron Abe Max]
 
 users = user_names.map { |name| User.create!(name: name) }
 
-tests = Test.create!([{ title: 'Ruby basics', level: 0, category_id: ruby.id, author_id: users.sample.id },
-                     { title: 'Ruby advanced', level: 1, category_id: ruby.id, author_id: users.sample.id },
-                     { title: 'Ruby core', level: 2, category_id: ruby.id, author_id: users.sample.id },
-                     { title: 'HTML basics', level: 0, category_id: html.id, author_id: users.sample.id },
-                     { title: 'HTML forms', level: 0, category_id: html.id, author_id: users.sample.id },
-                     { title: 'HTML canvas', level: 1, category_id: html.id, author_id: users.sample.id },
-                     { title: 'CSS basics', level: 0, category_id: css.id, author_id: users.sample.id },
-                     { title: 'CSS flexbox', level: 1, category_id: css.id, author_id: users.sample.id },
-                     { title: 'CSS grid', level: 1, category_id: css.id, author_id: users.sample.id }
+tests = Test.create!([{ title: 'Ruby basics', level: 0, category: ruby, author_id: users.sample.id },
+                     { title: 'Ruby advanced', level: 1, category: ruby, author_id: users.sample.id },
+                     { title: 'Ruby core', level: 2, category: ruby, author_id: users.sample.id },
+                     { title: 'HTML basics', level: 0, category: html, author_id: users.sample.id },
+                     { title: 'HTML forms', level: 0, category: html, author_id: users.sample.id },
+                     { title: 'HTML canvas', level: 1, category: html, author_id: users.sample.id },
+                     { title: 'CSS basics', level: 0, category: css, author_id: users.sample.id },
+                     { title: 'CSS flexbox', level: 1, category: css, author_id: users.sample.id },
+                     { title: 'CSS grid', level: 1, category: css, author_id: users.sample.id }
                     ])
 
 questions = 4
