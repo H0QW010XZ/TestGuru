@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  validates :name, :email, presence: true
+
   has_many :results
   has_many :tests, through: :results, dependent: :destroy
   has_many :creator, class_name: 'Test',foreign_key: 'author_id', dependent: :destroy
@@ -7,6 +9,4 @@ class User < ApplicationRecord
   def by_level(level)
     tests.where(level: level)
   end
-
-  validates :name, :email, presence: true
 end

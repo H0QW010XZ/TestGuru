@@ -14,9 +14,9 @@ ruby, html, css = Category.create!([
 
 user_names = %w[Jenifer Arron Abe Max]
 
-levels = (1..10).to_a
+users = user_names.map { |name| User.create!({name: name, email: "#{name}@test.com"}) }
 
-users = user_names.map { |name| User.create!(name: name) }
+levels = (1..10).to_a
 
 tests = Test.create!([{ title: 'Ruby basics', level: levels.sample, category: ruby, author_id: users.sample.id },
                      { title: 'Ruby advanced', level: levels.sample, category: ruby, author_id: users.sample.id },

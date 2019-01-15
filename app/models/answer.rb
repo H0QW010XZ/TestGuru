@@ -1,13 +1,12 @@
 class Answer < ApplicationRecord
   MAX_ANSWERS = 4
 
+  validates :body, presence: true
+  validate :answers_count, on: :create
+
   belongs_to :question
 
   scope :true_answers, -> { where(correct: true) }
-
-  validates :body, presence: true
-  validate :correct_answers, on: :create
-  validate :answers_count, on: :create
 
   private
 
@@ -17,9 +16,4 @@ class Answer < ApplicationRecord
     end
   end
 
-  def correct_answers
-    if question.answers.where(correct: true).count >= 1
-      errors.add(:answers_correct, "Only one correct answer can exist")
-    end
-  end
 end
