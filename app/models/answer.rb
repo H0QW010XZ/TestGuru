@@ -1,10 +1,10 @@
 class Answer < ApplicationRecord
   MAX_ANSWERS = 4
 
+  belongs_to :question
+
   validates :body, presence: true
   validate :answers_count, on: :create
-
-  belongs_to :question
 
   scope :true_answers, -> { where(correct: true) }
 
