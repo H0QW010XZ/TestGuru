@@ -1,0 +1,29 @@
+.test
+  p
+    | title:
+    = @test.title
+  p
+    | level:
+    = @test.level
+  p
+    | category:
+    = @test.category.title
+  p
+    | author:
+    = @test.author.name
+
+hr
+
+= link_to 'Show questions', test_questions_path(@test)
+| ,
+= link_to 'New question', new_test_question_path(@test)
+.questions
+  - @questions.each do |quest|
+    p
+      | body:
+      = quest.body
+      | ,
+      = link_to 'Show', quest
+      |   ,
+      = link_to "Delete", question_path(quest), method: :delete, data: {confirm: "Are you sure?"}
+  = link_to 'Back', tests_path

@@ -1,0 +1,4 @@
+.questions
+  - @test.questions.each do |quest|
+    = render 'question', quest: quest
+  = link_to 'Back', test_path(@test)

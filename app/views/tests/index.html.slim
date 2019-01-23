@@ -1,0 +1,11 @@
+h1 All tests
+
+= link_to 'New test', new_test_path
+table
+  tr
+    th id
+    th title
+    th category
+
+  - @tests.each do |test|
+    = render 'test', test: test
