@@ -1,16 +1,11 @@
-.test
-  p
-    | title:
-    = @test.title
-  p
-    | level:
-    = @test.level
-  p
-    | category:
-    = @test.category.title
-  p
-    | author:
-    = @test.author.name
+table
+  tr
+    th id
+    th title
+    th category
+    th author
+
+  = render @test
 
 hr
 
@@ -18,7 +13,7 @@ hr
 | ,
 = link_to 'New question', new_test_question_path(@test)
 .questions
-  - @questions.each do |quest|
+  - @test.questions.each do |quest|
     p
       | body:
       = quest.body

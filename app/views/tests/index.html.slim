@@ -6,6 +6,6 @@ table
     th id
     th title
     th category
+    th author
 
-  - @tests.each do |test|
-    = render 'test', test: test
+  = render @tests
