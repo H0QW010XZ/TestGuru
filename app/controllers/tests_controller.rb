@@ -23,7 +23,7 @@ class TestsController < ApplicationController
     if @test.save
       redirect_to @test
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -31,7 +31,7 @@ class TestsController < ApplicationController
     if @test.update(test_params)
       redirect_to @test
     else
-      render 'edit'
+      render :edit
     end
   end
 
