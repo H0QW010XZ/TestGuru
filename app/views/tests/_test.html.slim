@@ -1,0 +1,7 @@
+tr
+  td = test.id
+  td = test.title
+  td = test.category.title
+  td = test.author.name
+  td = link_to 'Show', test
+  td = link_to 'Delete', test, method: :delete, data: {confirm: 'Are you sure?'}

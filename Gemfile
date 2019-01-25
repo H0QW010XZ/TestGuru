@@ -29,6 +29,11 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
+# use slim for views
+gem 'slim'
+
+# convert erb2slim
+gem 'html2slim'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

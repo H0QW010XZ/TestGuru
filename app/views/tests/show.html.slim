@@ -1,0 +1,18 @@
+table
+  tr
+    th id
+    th title
+    th category
+    th author
+
+  = render @test
+
+hr
+
+= link_to 'Show questions', test_questions_path(@test)
+| ,
+= link_to 'New question', new_test_question_path(@test)
+.questions
+  - @test.questions.each do |quest|
+    = render 'questions/question', quest: quest
+  = link_to 'Back', tests_path
