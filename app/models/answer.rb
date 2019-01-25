@@ -15,5 +15,4 @@ class Answer < ApplicationRecord
       errors.add(:answers_count, "Should be #{MAX_ANSWERS} answers maximum.")
     end
   end
-
 end
