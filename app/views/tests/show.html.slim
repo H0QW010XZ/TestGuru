@@ -14,11 +14,5 @@ hr
 = link_to 'New question', new_test_question_path(@test)
 .questions
   - @test.questions.each do |quest|
-    p
-      | body:
-      = quest.body
-      | ,
-      = link_to 'Show', quest
-      |   ,
-      = link_to "Delete", question_path(quest), method: :delete, data: {confirm: "Are you sure?"}
+    = render 'questions/question', quest: quest
   = link_to 'Back', tests_path
