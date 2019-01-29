@@ -1,5 +1,6 @@
 - if resource.errors.present?
-  h2
+  #error_explanation
+    h2
     = pluralize(resource.errors.count, 'error')
     |   detected
   ul

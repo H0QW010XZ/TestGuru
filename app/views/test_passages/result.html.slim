@@ -1,0 +1,16 @@
+h1
+  | Test
+  =<> @test_passage.test.title
+  | was completed
+
+
+p = all_questions
+
+p
+  | Correct answers:
+  =< @test_passage.correct_questions
+
+= result_message(@test_passage.result_in_percentages)
+
+= link_to 'Back', root_path
+

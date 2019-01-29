@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :results
-  has_many :tests, through: :results, dependent: :destroy
+  has_many :test_passages, dependent: :destroy
+  has_many :tests, through: :test_passages, dependent: :destroy
   has_many :creator, class_name: 'Test',foreign_key: 'author_id', dependent: :destroy
   has_many :created_tests, class_name: 'Test',foreign_key: 'author_id', dependent: :destroy
 
@@ -8,5 +8,9 @@ class User < ApplicationRecord
 
   def by_level(level)
     tests.where(level: level)
+  end
+
+  def test_passage(test)
+    test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 end

@@ -3,8 +3,8 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User'
 
   has_many :questions, dependent: :destroy
-  has_many :results, dependent: :destroy
-  has_many :users, through: :results, dependent: :destroy
+  has_many :test_passages, dependent: :destroy
+  has_many :users, through: :test_passages, dependent: :destroy
 
   validates :title, uniqueness: { scope: :level }, presence: true
   validates :level, presence: true

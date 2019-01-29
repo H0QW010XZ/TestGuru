@@ -1,9 +1,11 @@
 p
   | id:
-  = quest.id
-  | - body:
-  = quest.body
-  |  ,
-  = link_to 'Edit', edit_question_path(quest)
-  |  ,
+  => quest.id
+  | , body:
+  => quest.body
+  |
+  => link_to 'Show', question_path
+  |
+  => link_to 'Edit', edit_question_path(quest)
+  |
   = link_to "Delete", quest, method: :delete, data: {confirm: "Are you sure?"}
