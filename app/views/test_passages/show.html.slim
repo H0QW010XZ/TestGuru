@@ -3,7 +3,14 @@ h1
   =<> @test_passage.test.title
   | Test
 
-b
+p
+  | Questions:
+  =< @test_passage.test.questions.count
+p
+  | Question number:
+  =< @test_passage.current_question.id
+
+p
   =  @test_passage.current_question.body
 
 = form_with url: test_passage_path(@test_passage), local: true, method: :put do |form|

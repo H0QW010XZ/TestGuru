@@ -4,13 +4,13 @@ h1
   | was completed
 
 
-p = all_questions
+p = all_questions(@test_passage)
 
 p
   | Correct answers:
   =< @test_passage.correct_questions
 
-= result_message(@test_passage.result_in_percentages)
+= result_message(@test_passage)
 
 = link_to 'Back', root_path
 

@@ -4,30 +4,19 @@ class TestPassage < ApplicationRecord
 
   belongs_to :test
   belongs_to :user
-
   belongs_to :current_question, class_name: :Question, optional: true
 
   validates :score, presence: true
 
-  before_validation :before_validation_set_first_question, except: :result
+  before_validation :before_validation_set_first_question
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
-    end
-    save
+    self.correct_questions += 1 if correct_answer?(answer_ids)
+    save!
   end
 
   def completed?
     current_question.nil?
-  end
-
-  def result_in_percentages
-    (correct_questions * 100.0 / test.questions.count).round(2)
-  end
-
-  def successful?
-    result_in_percentages >= SUCCESS_PERCENTAGES if completed?
   end
 
   private
