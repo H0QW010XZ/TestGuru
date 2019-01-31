@@ -19,6 +19,19 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def question_number
+    test.questions.order(:id).where('id <= ?', current_question).count
+  end
+
+  def result_in_percentages
+    (correct_questions * 100.0 / test.questions.count).round(2)
+  end
+
+  def successful?
+    result_in_percentages >= SUCCESS_PERCENTAGES if completed?
+  end
+
+
   private
 
   def before_validation_set_first_question
