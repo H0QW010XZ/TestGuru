@@ -1,11 +1,16 @@
 h1 All tests
 
 = link_to 'New test', new_test_path
+
+- 3.times do
+    br
+
 table
-  tr
-    th id
+  tr.tests
+    th.id id
     th title
     th category
-    th author
+    th questions
+    th actions
 
   = render @tests

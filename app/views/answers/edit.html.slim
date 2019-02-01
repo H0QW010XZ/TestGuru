@@ -1,0 +1,8 @@
+h1
+  | Editing Answer
+
+p
+  = @answer.question.body
+= render 'form', answer: @answer
+= link_to 'Show', @answer
+

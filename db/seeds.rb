@@ -46,6 +46,6 @@ end
 
 users.each do |user|
   tests.sample(4).each do |test|
-    Result.create!(score: rand(1..4), test_id: test.id, user_id: user.id)
+    TestPassage.create!(score: rand(1..4), test_id: test.id, user_id: user.id)
   end
 end

@@ -3,15 +3,17 @@ table
     th id
     th title
     th category
-    th author
+    th questions
+    th actions
 
   = render @test
 
-hr
+- 3.times do
+  br
 
-= link_to 'Show questions', test_questions_path(@test)
-| ,
+
 = link_to 'New question', new_test_question_path(@test)
+
 .questions
   - @test.questions.each do |quest|
     = render 'questions/question', quest: quest
