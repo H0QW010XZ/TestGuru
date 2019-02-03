@@ -1,10 +1,13 @@
 class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages, dependent: :destroy
-  has_many :creator, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
 
-  validates :name, :email, presence: true
+  has_secure_password
+
+  validates :name, :email, presence: true, uniqueness: true
+  validates :password, length: { maximum: 20, minimum: 6}
+  validates :password, confirmation: true
 
   def by_level(level)
     tests.where(level: level)

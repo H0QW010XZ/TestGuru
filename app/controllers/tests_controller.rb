@@ -19,10 +19,10 @@ class TestsController < ApplicationController
   def create
     @test = Test.new(test_params)
 
-    @test.author = User.all.sample
+    @test.author = current_user
 
     if @test.save
-      redirect_to @test
+      redirect_to @test, success: 'Test was created successfully!'
     else
       render :new
     end
@@ -30,7 +30,7 @@ class TestsController < ApplicationController
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to @test, success: 'Test was updated successfully!'
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class TestsController < ApplicationController
 
   def destroy
     @test.destroy!
-    redirect_to tests_path
+    redirect_to tests_path, success: 'Test was deleted successfully!'
   end
 
   def start
@@ -57,7 +57,7 @@ class TestsController < ApplicationController
   end
 
   def set_user
-    @user = User.first
+    @user = current_user
   end
 
   def rescue_from_test_not_found
