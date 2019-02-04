@@ -8,13 +8,16 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path, success: 'You have successfully logged in!'
+      redirect_to cookies.delete(:return_to) || tests_path, success: 'You have successfully logged in!'
     else
+      flash.now[:alert] = 'Verify your Email and Password please'
       render :new
     end
   end
 
   def destroy
+    session.clear
     session[:user_id] = nil
+    redirect_to root_path, notice: 'Goodbye!'
   end
 end

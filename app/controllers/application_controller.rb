@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
+      cookies[:return_to] = request.fullpath
       redirect_to signin_path, alert: 'Are you signed in? Verify your Email and Password please'
     end
   end

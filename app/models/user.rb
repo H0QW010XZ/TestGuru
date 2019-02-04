@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  validates :name, :email, presence: true, uniqueness: true
+  validates :name, :email, presence: true, uniqueness: true, format: { with: /.+@.+\..+/i }
   validates :password, length: { maximum: 20, minimum: 6}
   validates :password, confirmation: true
 
