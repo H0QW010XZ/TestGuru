@@ -6,8 +6,7 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :name, :email, presence: true, uniqueness: true, format: { with: /.+@.+\..+/i }
-  validates :password, length: { maximum: 20, minimum: 6}
-  validates :password, confirmation: true
+  validates :password, length: { maximum: 20, minimum: 6 }, confirmation: true
 
   def by_level(level)
     tests.where(level: level)
