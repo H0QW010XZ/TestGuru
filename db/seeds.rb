@@ -14,7 +14,15 @@ ruby, html, css = Category.create!([
 
 user_names = %w[Jenifer Arron Abe Max]
 
-users = user_names.map { |name| User.create!({name: name, email: "#{name}@test.com"}) }
+letters = ('a'..'z').to_a
+
+users = user_names.map do |name|
+  password = ''
+
+  20.times { password << letters.sample }
+
+  User.create!({ name: name, email: "#{name}@test.com", password: password })
+end
 
 levels = (1..10).to_a
 
