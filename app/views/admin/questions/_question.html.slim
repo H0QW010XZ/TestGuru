@@ -1,0 +1,11 @@
+p
+  | id:
+  => quest.id
+  | , body:
+  => quest.body
+  |
+  => link_to 'Show', admin_question_path(quest)
+  |
+  => link_to 'Edit', edit_admin_question_path(quest)
+  |
+  = link_to "Delete", admin_question_path(quest), method: :delete, data: {confirm: "Are you sure?"}

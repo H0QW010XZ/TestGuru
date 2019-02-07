@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   devise_for :users, path_names: { sign_in: :login, sign_out: :logout}
 
-  resources :tests do
-    resources :questions, shallow: true, except: :index do
-      resources :answers, shallow: true, except: :index
+  resources :tests, only: :index do
+    resources :questions, shallow: true, only: :show do
+      resources :answers, shallow: true, only: :show
     end
 
     post :start, on: :member
@@ -15,4 +15,14 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[show update] do
     get :result, on: :member
   end
+
+  namespace :admin do
+    resources :tests do
+      resources :questions, shallow: true, except: :index do
+        resources :answers, shallow: true, except: :index
+      end
+    end
+  end
+
+
 end
