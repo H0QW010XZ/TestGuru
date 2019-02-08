@@ -38,11 +38,6 @@ class Admin::TestsController < Admin::BaseController
     redirect_to admin_tests_path, success: 'Test was deleted successfully!'
   end
 
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
-  end
-
   private
 
   def test_params

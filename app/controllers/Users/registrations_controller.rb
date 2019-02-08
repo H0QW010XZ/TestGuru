@@ -10,10 +10,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-     super
-     flash[:notice] = "Welcome, #{current_user.email}"
-  end
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit
