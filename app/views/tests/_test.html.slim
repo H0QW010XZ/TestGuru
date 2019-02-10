@@ -3,10 +3,5 @@ tr.tests
   td = test.title
   td = test.category.title
   td = test.questions.count
-  td
-    => link_to 'Show', test
-    |
-    => link_to 'Delete', test, method: :delete, data: {confirm: 'Are you sure?'}
-    |
-    = button_to 'Start', start_test_path(test)
+  td = button_to 'Start', start_test_path(test)
 

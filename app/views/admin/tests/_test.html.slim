@@ -1,0 +1,12 @@
+tr.tests
+  td.id = test.id
+  td = test.title
+  td = test.category.title
+  td = test.questions.count
+  td
+    => link_to 'Show', admin_test_path(test)
+    |
+    => link_to 'Edit', edit_admin_test_path(test)
+    |
+    => link_to 'Delete', admin_test_path(test), method: :delete, data: {confirm: 'Are you sure?'}
+

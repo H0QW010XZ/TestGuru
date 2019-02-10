@@ -1,0 +1,21 @@
+table
+  tr
+    th id
+    th title
+    th category
+    th questions
+    th actions
+
+  = render @test
+
+- 3.times do
+  br
+
+
+= link_to 'New question', new_admin_test_question_path(@test)
+
+.questions
+  - @test.questions.each do |quest|
+    = render 'admin/questions/question', quest: quest
+=> link_to 'Edit', edit_admin_test_path(@test)
+= link_to 'Back', admin_tests_path(@test)
