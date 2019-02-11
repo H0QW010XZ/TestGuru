@@ -1,14 +1,14 @@
-h1 All tests
+h1 = t('.header')
 
 - 3.times do
     br
 
 table
   tr.tests
-    th.id id
-    th title
-    th category
-    th questions
-    th actions
+    td = t('.title')
+    td = t('.category')
+    td = t('.level')
+    td = t('.actions')
 
   = render @tests
+

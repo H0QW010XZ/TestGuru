@@ -1,10 +1,9 @@
 table
   tr
-    th id
-    th title
-    th category
-    th questions
-    th actions
+    th = t('.title')
+    th = t('.category')
+    th = t('.questions')
+    th = t('.actions')
 
   = render @test
 
@@ -12,10 +11,10 @@ table
   br
 
 
-= link_to 'New question', new_admin_test_question_path(@test)
+= link_to t('.new_question'), new_admin_test_question_path(@test)
 
 .questions
   - @test.questions.each do |quest|
     = render 'admin/questions/question', quest: quest
-=> link_to 'Edit', edit_admin_test_path(@test)
-= link_to 'Back', admin_tests_path(@test)
+=> link_to t('.edit'), edit_admin_test_path(@test)
+= link_to t('navigation.back'), admin_tests_path(@test)

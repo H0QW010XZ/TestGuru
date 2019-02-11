@@ -1,7 +1,7 @@
 tr.tests
-  td.id = test.id
   td = test.title
   td = test.category.title
+  td = test.level
   td = test.questions.count
-  td = button_to 'Start', start_test_path(test)
+  td = button_to t('.start'), start_test_path(test)
 

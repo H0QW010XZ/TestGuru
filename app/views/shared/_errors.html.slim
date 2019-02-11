@@ -1,8 +1,6 @@
 - if resource.errors.present?
   #error_explanation
-    h2
-    = pluralize(resource.errors.count, 'error')
-    |   detected
+    h2 = t('.header', count: resource.errors.count)
   ul
     - resource.errors.full_messages.each do |message|
       li = message
