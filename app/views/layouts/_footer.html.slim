@@ -1,8 +1,8 @@
 footer
-  p
-  | &copy;
-  => current_year
-  |
-  => link_to 'TestGuru', github_url('h0qw010xz', 'testguru'), target: '_blank'
-  | -
-  =< link_to 'Учебный проект в онлайн-школе Thinknetica', 'https://thinknetica.com/', target: '_blank'
+  span.white
+    | &copy;
+    => current_year
+  span
+    => link_to 'TestGuru', github_url('h0qw010xz', 'testguru'), target: '_blank'
+    b.white -
+    =< link_to 'Учебный проект в онлайн-школе Thinknetica', 'https://thinknetica.com/', target: '_blank'

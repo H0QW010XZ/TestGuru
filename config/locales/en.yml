@@ -3,6 +3,10 @@ en:
     result:
       header: "The %{title} test was completed!"
 
+  layouts:
+    header:
+      welcome: "Welcome"
+
   shared:
     errors:
       header:
@@ -74,6 +78,21 @@ en:
         show: "Show"
         edit: "Edit"
         delete: "Delete"
+        start: "Start"
+        quest_actions: "Actions"
+
+      new:
+        create: "Create"
+        create_test: "Create test"
+
+      edit:
+        edit_test: "Edit"
+
+      form:
+        submit: "Submit"
+
+    nav:
+      welcome: "Welcome"
 
   tests_mailer:
     completed_test:
@@ -82,3 +101,6 @@ en:
   navigation:
     back: "Back"
     confirm: "You are sure?"
+    log_in: "Log in"
+    log_out: "Log out"
+    sign_up: "Sign up"

@@ -1,13 +1,20 @@
-= link_to 'TestGuru', root_path
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  = link_to 'TestGuru', root_path, class: 'navbar-brand'
 
-- if user_signed_in?
-  p.nav.user
-    | Welcome
-    =<> current_user.email
-    | Guru
-    =< link_to 'Log out', destroy_user_session_path, method: :delete
-- else
-  p.nav.user
-    => link_to 'Log in', new_user_session_path
-    | or
-    =<> link_to 'Sign up', new_user_registration_path
+  button.navbar-toggler data-toggle="collapese" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+    span.navbar-toggler-icon
+  .collapse.navbar-collapse id="navbarNavDropdown"
+    ul.navbar-nav.mr-auto
+      - if user_signed_in?
+        li.nav-item
+          a.nav-link.active
+            = t('.welcome')
+            |,
+            =< current_user.email
+        li.nav-item
+          = link_to t('navigation.log_out'), destroy_user_session_path, method: :delete, class: "nav-link"
+      - else
+        li.nav-item
+          = link_to t('navigation.log_in'), new_user_session_path, class: "nav-link"
+        li.nav-item
+          = link_to t('navigation.sign_up'), new_user_registration_path, class: "nav-link"
