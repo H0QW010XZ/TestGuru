@@ -1,4 +1,4 @@
-class Admin::QuestionsController < Admin::BaseController
+class Admin::QuestionsController < ApplicationController
   before_action :set_test, only: %i[new create]
   before_action :set_question, only: %i[show destroy edit update]
 

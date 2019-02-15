@@ -2,16 +2,12 @@ en:
   activerecord:
     models:
       test: "Test"
-      question: "Question"
 
     attributes:
       test:
         title: "Title"
         category: "Category"
         level: "Level"
-      question:
-        id: "Id"
-        body: "body"
 
     errors:
       messages:

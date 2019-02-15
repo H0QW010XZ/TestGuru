@@ -1,14 +1,12 @@
-tr
-  th scope='row' = test.title
+tr.tests
+  td = test.title
   td = test.category.title
   td = test.level
   td = test.questions.count
   td
-    => link_to t('.show'), admin_test_path(test), class: "text-decoration-none"
+    => link_to t('.show'), admin_test_path(test)
     |
-    => link_to t('.edit'), edit_admin_test_path(test), class: "text-decoration-none"
+    => link_to t('.edit'), edit_admin_test_path(test)
     |
-    => link_to t('.delete'), admin_test_path(test), method: :delete, data: {confirm: t('navigation.confirm')}, class: "text-decoration-none"
-
-
+    => link_to t('.delete'), admin_test_path(test), method: :delete, data: {confirm: t('navigation.confirm')}
 

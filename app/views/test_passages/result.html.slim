@@ -1,18 +1,19 @@
-h1.white = t('.header', title: @test_passage.test.title)
+h1 = t('.header', title: @test_passage.test.title)
 
-p.white = all_questions(@test_passage)
 
-p.white
+p = all_questions(@test_passage)
+
+p
   | Correct answers:
   =< @test_passage.correct_questions
 
 - if @test_passage.successful?
-  h2.white
+  h2
     | Your result is
     span.success =<> result_message(@test_passage)
     | , you passed the test.
 - else
-  h2.white
+  h2
     | Your result is
     span.fail =<> result_message(@test_passage)
     |, you failed the test.

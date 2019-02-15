@@ -29,13 +29,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
-# Authentication
 gem 'devise'
+
 gem 'omniauth'
 
-# bootstrap
-gem 'jquery-rails'
-gem 'bootstrap'
 # use slim for views
 gem 'slim'
 
