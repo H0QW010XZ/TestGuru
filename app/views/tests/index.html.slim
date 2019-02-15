@@ -1,14 +1,14 @@
-h1.white= t('.header')
+h1 = t('.header')
 
-.table-responsive.shadow-sm.p-3.mb-5.bg-dark.rounded
-  table.table.table-dark.table-bordered.table-hover
-    thead.thead-dark
-      tr
-      th scope="col" = t('.title')
-      th scope="col" = t('.category')
-      th scope="col" = t('.level')
-      th scope="col" = t('.questions')
-      th scope="col" = t('.actions')
-    tbody
-      = render @tests
+- 3.times do
+    br
+
+table
+  tr.tests
+    td = t('.title')
+    td = t('.category')
+    td = t('.level')
+    td = t('.actions')
+
+  = render @tests
 

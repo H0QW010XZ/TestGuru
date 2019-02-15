@@ -1,27 +1,22 @@
+h1 = test_header(@test)
+
 = form_with model: [:admin, @test], local: true do |f|
   = render 'shared/errors', resource: @test
 
-  .form-group
+  p
     |
-    => f.label :title, class: "white"
+    = f.label :title
     |
-    = f.text_field :title, class: "form-control"
+    = f.text_field :title
 
-  .form-group
+  p
     |
-    => f.label :level, class: "white"
+    = f.label :level
     |
-    = f.number_field :level, min: 0, max: 10, class: "form-control"
+    = f.number_field :level, min: 0, max: 10
 
-  .form-group
-    .dropdown
-      button.btn.btn-secondary.dropdown-toggle type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-        | Select
-    .dropdown-menu aria-labelledby="dropdownMenu2"
-      button.dropdown-item type="button"
+  p
     = f.collection_select :category_id, Category.all, :id, :title, prompt: true
 
-
-  .form-group
-    = f.submit t('.submit'), class: "btn btn-primary"
-
+  p
+    = f.submit
