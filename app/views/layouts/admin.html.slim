@@ -1,6 +1,8 @@
 doctype html
 html
   head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
     title
       | Admin Panel || TestGuru
     = csrf_meta_tags
@@ -12,6 +14,7 @@ html
 
     = render 'shared/flash'
 
-    = yield
+    .container
+      = yield
 
-    = render 'layouts/footer'
+      = render 'layouts/footer'

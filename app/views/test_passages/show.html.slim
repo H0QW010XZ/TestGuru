@@ -1,24 +1,29 @@
-h1
+h1.white
   | Pass the
   =<> @test_passage.test.title
   | Test
 
-p
+p.h3.white
   | Questions:
   =< @test_passage.test.questions.count
-p
+p.h4.white
   | Question number:
   =< @test_passage.question_number
 
-p
+p.h5.white
   =  @test_passage.current_question.body
 
+- 2.times do
+    br
 = form_with url: test_passage_path(@test_passage), local: true, method: :put do |form|
   = form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b|
-    p
-      = b.check_box id: "answer_ids_#{b.object.id}"
-      = b.label
-  p
-    = form.submit :Next
+
+    .white.form-group
+      => b.check_box id: "answer_ids_#{b.object.id}", class: "form-check-input"
+      = b.label class: "form-check-label"
+
+
+  .white.form-group
+    = form.submit :Next, class: "btn btn-primary"
 
 = link_to 'Back', root_path

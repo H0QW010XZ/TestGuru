@@ -1,8 +1,17 @@
-# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
-
 en:
   devise:
+    update: "Update"
+    password_placeholder: "Password"
+    email_placeholder: "Enter email"
+    password_label: "Password"
+    email_label: "Email"
+    email_helper: "We'll never share your email with anyone else."
+    minimum_password: "characters minimum"
+    password_confirmation_label: "confirm password"
+    back: "Back"
     confirmations:
+      new:
+        resend: "Resend confirmation instructions"
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -31,6 +40,13 @@ en:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
     passwords:
+      new:
+        forgot_password: "Forgot your password?"
+        send_me: "Send me reset password instructions"
+      edit:
+        header: "Change your password"
+        change: "Change my password"
+        new_password: "New password"
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
@@ -38,8 +54,15 @@ en:
       updated_not_active: "Your password has been changed successfully."
     registrations:
       new:
-        sign_up: "sign up"
-        header: "become a guru"
+        sign_up: "Sign up"
+        header: "Become a guru"
+      edit:
+        header: "Edit"
+        we_need: "(we need your current password to confirm your changes)"
+        cancel: "Cancel my account"
+        unhappy: "Unhappy?"
+        currently_waiting: "Currently waiting confirmation for:"
+        no_change: "(leave blank if you don't want to change it)"
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
@@ -50,6 +73,7 @@ en:
     sessions:
       new:
         header: "Log in"
+        remember_me: "Remember me"
         sign_in: "Sign in"
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
@@ -58,6 +82,12 @@ en:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      new:
+      resend: "Resend unlock instructions"
+    shared:
+      links:
+        forgot_password: "Forgot your password?"
+        didnt_receive: "Didn't receive confirmation instructions?"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

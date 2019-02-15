@@ -1,8 +1,14 @@
-div.nav.nav-admin
-  span.nav-admin.title TestGuru Admin Panel
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  = link_to 'TestGuru Admin Panel', admin_tests_path, class: 'navbar-brand'
 
-  div.nav-admin.user
-    | Welcome,
-    b.nav-admin.user-email
-    =<> current_user.email
-  = link_to 'Logout', destroy_user_session_path, method: :delete
+  button.navbar-toggler data-toggle="collapese" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+    span.navbar-toggler-icon
+  .collapse.navbar-collapse id="navbarNavDropdown"
+    ul.navbar-nav.mr-auto
+      li.nav-item
+        a.nav-link.active
+          = t('.welcome')
+          |,
+          =< current_user.email
+      li.nav-item
+        = link_to t('navigation.log_out'), destroy_user_session_path, method: :delete, class: "nav-link"
