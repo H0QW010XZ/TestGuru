@@ -1,8 +1,6 @@
 class Admin::TestsController < Admin::BaseController
   before_action :set_test, only: %i[show edit update destroy start]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_from_test_not_found
-
   def show; end
 
   def edit; end
@@ -19,7 +17,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.created_tests.new(test_params)
 
     if @test.save
-      redirect_to admin_test_path(@test), success: 'Test was created successfully!'
+      redirect_to admin_test_path(@test), notice: t('.success')
     else
       render :new
     end
@@ -27,7 +25,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to admin_test_path(@test), success: 'Test was updated successfully!'
+      redirect_to admin_test_path(@test), notice: t('.success')
     else
       render :edit
     end
@@ -35,7 +33,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy!
-    redirect_to admin_tests_path, success: 'Test was deleted successfully!'
+    redirect_to admin_tests_path, notice: t('.success')
   end
 
   private
@@ -46,9 +44,5 @@ class Admin::TestsController < Admin::BaseController
 
   def set_test
     @test = Test.find(params[:id])
-  end
-
-  def rescue_from_test_not_found
-    render plain: 'Test not found'
   end
 end
