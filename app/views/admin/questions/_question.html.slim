@@ -1,11 +1,9 @@
-p
-  | id:
-  => quest.id
-  | , body:
-  => quest.body
-  |
-  => link_to 'Show', admin_question_path(quest)
-  |
-  => link_to 'Edit', edit_admin_question_path(quest)
-  |
-  = link_to "Delete", admin_question_path(quest), method: :delete, data: {confirm: "Are you sure?"}
+tr
+  th scope='row' = quest.id
+  td = quest.body
+  td
+    => link_to "Show", admin_question_path(quest), class: "text-decoration-none"
+    |
+    => link_to "Edit", edit_admin_question_path(quest), class: "text-decoration-none"
+    |
+    => link_to "Delete", admin_question_path(quest), method: :delete, data: {confirm: t('navigation.confirm')}, class: "text-decoration-none"

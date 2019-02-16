@@ -3,6 +3,10 @@ ru:
     result:
       header: "Тест %{title} успешно завершен!"
 
+  layouts:
+    header:
+      welcome: "Добро пожаловать"
+
   shared:
     errors:
       header:
@@ -76,6 +80,22 @@ ru:
         show: "Показать"
         edit: "Редактировать"
         delete: "Удалить"
+        start: "Начать"
+        quest_actions: "Действия"
+
+      new:
+        create: "Создать"
+        create_test: "Создать тест"
+
+      edit:
+        edit_test: "Редактирование"
+
+      form:
+        submit: "Продолжить"
+
+
+    nav:
+      welcome: "Добро пожаловать"
 
   tests_mailer:
     completed_test:
@@ -84,3 +104,6 @@ ru:
   navigation:
     back: "Назад"
     confirm: "Вы уверены?"
+    log_in: "Войти"
+    log_out: "Выйти"
+    sign_up: "Зарегистрироваться"
