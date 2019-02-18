@@ -2,6 +2,9 @@ en:
   test_passages:
     result:
       header: "The %{title} test was completed!"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist!"
 
   layouts:
     header:
@@ -45,6 +48,13 @@ en:
       start: "Start"
 
   admin:
+    gists:
+      index:
+        header: "List of Gists"
+        question: "Question"
+        gist_url: "Gist URL"
+        user: "User"
+
     tests:
       index:
         header: "All tests"
@@ -54,6 +64,7 @@ en:
         category: "Category"
         questions: "Questions"
         actions: "Actions"
+        gists: "Gists users"
 
       show:
         title: "Title"
@@ -104,3 +115,6 @@ en:
     log_in: "Log in"
     log_out: "Log out"
     sign_up: "Sign up"
+
+  git_question_service:
+    desc: "A question about %{title} from TestGuru"

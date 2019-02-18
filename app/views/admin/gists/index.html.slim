@@ -1,0 +1,13 @@
+h1.white= t('.header')
+
+.table-responsive.shadow-sm.p-3.mb-5.bg-dark.rounded
+  table.table.table-dark.table-bordered.table-hover
+    thead.thead-dark
+      tr
+      th scope="col" = t('.user')
+      th scope="col" = t('.question')
+      th scope="col" = t('.gist_url')
+    tbody
+      = render @gists
+
+= link_to t('navigation.back'), admin_tests_path, class: 'nav-link'

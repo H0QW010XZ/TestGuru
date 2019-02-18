@@ -22,8 +22,8 @@ p.h5.white
       => b.check_box id: "answer_ids_#{b.object.id}", class: "form-check-input"
       = b.label class: "form-check-label"
 
-
   .white.form-group
+    p = link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post
     = form.submit :Next, class: "btn btn-primary"
 
 = link_to 'Back', root_path
