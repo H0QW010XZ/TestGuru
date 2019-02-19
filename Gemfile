@@ -39,7 +39,7 @@ gem 'omniauth'
 gem 'jquery-rails'
 gem 'bootstrap'
 # use slim for views
-gem 'slim'
+gem 'slim-rails'
 
 # convert erb2slim
 gem 'html2slim'
