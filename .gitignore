@@ -33,6 +33,4 @@
 # Ignore application configuration
 /config/application.yml
 
-app/\.env
-
-\.env
+/.env
