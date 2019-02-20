@@ -1,20 +1,18 @@
 class GistQuestionService
-
+  attr_reader :result
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
     @client = client || default_client
-  end
-
-  def call
-    @gist_answer = @client.create_gist(gist_params)
-  end
-
-  def success?
-    @gist_answer[:html_url].present?
+    @result = call
   end
 
   private
+
+  def call
+    gist = @client.create_gist(gist_params)
+    ResultObject.new(gist)
+  end
 
   def gist_params
     {
@@ -29,12 +27,10 @@ class GistQuestionService
   end
 
   def default_client
-    Octokit::Client.new(access_token: ENV['git_gist_key'])
+    Octokit::Client.new(access_token: ENV['GIT_GIST_KEY'])
   end
 
   def gist_content
-    content = [@question.body]
-    content += @question.answers.pluck(:body)
-    content.join("\n")
+    [@question.body, *@question.answers.pluck(:body)].join("\n")
   end
 end

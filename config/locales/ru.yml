@@ -3,7 +3,7 @@ ru:
     result:
       header: "Тест %{title} успешно завершен!"
     gist:
-      success: "Gist успешно сохранен!"
+      success: "%{hash} Gist успешно сохранен!"
       failure: "Во время сохранения gist произошда ошибка"
 
   layouts:
