@@ -35,4 +35,4 @@
 /config/application.yml
 
 # Ignore env files
-/.env
+.env
