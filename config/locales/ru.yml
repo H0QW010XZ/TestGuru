@@ -2,6 +2,9 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+    gist:
+      success: "%{hash} gist успешно сохранен!"
+      failure: "Во время сохранения gist произошда ошибка"
 
   layouts:
     header:
@@ -47,6 +50,13 @@ ru:
       start: "Начать"
 
   admin:
+    gists:
+      index:
+        header: "Список Gists"
+        question: "Вопрос"
+        gist_url: "gist URL"
+        user: "Пользователь"
+
     tests:
       index:
         header: "Доступные тесты"
@@ -56,6 +66,7 @@ ru:
         category: "Категория"
         questions: "Вопросы"
         actions: "Действия"
+        gists: "Gists пользователей"
 
       show:
         title: "Название"
@@ -107,3 +118,6 @@ ru:
     log_in: "Войти"
     log_out: "Выйти"
     sign_up: "Зарегистрироваться"
+
+  git_question_service:
+    desc: "Вопрос %{title} от TestGuru"

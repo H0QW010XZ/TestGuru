@@ -1,0 +1,4 @@
+tr
+  th scope='row' = gist.user.email
+  td = link_to gist.question.body.truncate(25), admin_question_path(gist.question)
+  td = link_to gist.url, gist.url
