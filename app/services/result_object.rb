@@ -8,6 +8,6 @@ class ResultObject
   end
 
   def url
-    @res.html_url
+    @res&.html_url
   end
 end

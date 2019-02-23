@@ -3,7 +3,7 @@ ru:
     result:
       header: "Тест %{title} успешно завершен!"
     gist:
-      success: "%{hash} Gist успешно сохранен!"
+      success: "%{hash} gist успешно сохранен!"
       failure: "Во время сохранения gist произошда ошибка"
 
   layouts:
@@ -54,7 +54,7 @@ ru:
       index:
         header: "Список Gists"
         question: "Вопрос"
-        gist_url: "Gist URL"
+        gist_url: "gist URL"
         user: "Пользователь"
 
     tests:

@@ -1,18 +1,16 @@
 class GistQuestionService
-  attr_reader :result
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
     @client = client || default_client
-    @result = call
   end
-
-  private
 
   def call
     gist = @client.create_gist(gist_params)
     ResultObject.new(gist)
   end
+
+  private
 
   def gist_params
     {
