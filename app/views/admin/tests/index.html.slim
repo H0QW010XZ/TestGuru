@@ -7,10 +7,15 @@ h1.white= t('.header')
   table.table.table-dark.table-bordered.table-hover
     thead.thead-dark
       tr
-      th scope="col" = t('.title')
-      th scope="col" = t('.category')
-      th scope="col" = t('.level')
-      th scope="col" = t('.questions')
-      th scope="col" = t('.actions')
+        th.sort-by-title.pointer scope="col"
+          = t('.title')
+          |
+          = octicon 'arrow-up', class: "text-success hide"
+          |
+          = octicon 'arrow-down', class: "text-success hide"
+        th scope="col" = t('.category')
+        th scope="col" = t('.level')
+        th scope="col" = t('.questions')
+        th scope="col" = t('.actions')
     tbody
       = render @tests
