@@ -3,7 +3,7 @@
     <h2 class="white"><%= t('.sign_up')%></h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+      <%= render "shared/errors", resource: resource %>
 
       <div class="form-group">
         <%= f.label :email, t('devise.email_label'), class: "white" %><br />
@@ -20,6 +20,8 @@
 
       <div class="form-group">
         <%= f.label :password_confirmation, t('devise.password_confirmation_label'), class: "white" %><br />
+        <%= octicon 'check', class: 'text-success hide' %>
+        <%= octicon 'alert', class: 'text-success hide' %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "#{t('devise.password_placeholder')}" %>
       </div>
 

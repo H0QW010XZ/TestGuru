@@ -1,6 +1,6 @@
 - if resource.errors.present?
   #error_explanation
-    h2 = t('.header', count: resource.errors.count)
-  ul
+    h2.white = t('.header', count: resource.errors.count)
+  ul.white
     - resource.errors.full_messages.each do |message|
       li = message
