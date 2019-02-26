@@ -16,13 +16,15 @@ user_names = %w[Jenifer Arron Abe Max]
 
 letters = ('a'..'z').to_a
 
-users = user_names.map do |name|
-  password = ''
+user_names.map do |name|
+  password = '123123'
 
-  20.times { password << letters.sample }
-
-  User.create!({ name: name, email: "#{name}@test.com", password: password })
+  user = User.new({ email: "#{name}@test.com", password: password })
+  user.skip_confirmation!
+  user.save!
 end
+
+users = User.all
 
 levels = (1..10).to_a
 
@@ -55,5 +57,16 @@ end
 users.each do |user|
   tests.sample(4).each do |test|
     TestPassage.create!(score: rand(1..4), test_id: test.id, user_id: user.id)
+  end
+end
+
+admin = Admin.new({ first_name: "qwe", last_name: "qwe", email: "admin@test.com", password: "123qwe123"} )
+admin.skip_confirmation!
+admin.save!
+
+users.each do |user|
+  2.times do
+    question = Question.all.sample
+    Gist.create!({ user: user, question: question, url: question })
   end
 end
