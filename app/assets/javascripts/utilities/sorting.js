@@ -2,9 +2,13 @@ document.addEventListener('turbolinks:load', function () {
     var control = document.querySelector('.sort-by-title')
 
     // без доп функции не работает
-    control.addEventListener('click', function () {
-        sortRowsByTitle(this)
-    })
+
+    if (control) {
+
+        control.addEventListener('click', function () {
+            sortRowsByTitle(this)
+        })
+    }
 });
 
 
