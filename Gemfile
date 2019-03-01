@@ -42,6 +42,7 @@ gem 'bootstrap'
 # use slim for views
 gem 'slim-rails'
 
+gem "octicons_helper"
 # convert erb2slim
 gem 'html2slim'
 # Use Capistrano for deployment
