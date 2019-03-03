@@ -1,7 +1,7 @@
 tr
-  td scope='row' = test.title
-  td = test.category.title
-  td = test.level
-  td = test.questions.count
-  td = button_to t('.start'), start_test_path(test), class: "btn btn-primary"
+  td class="align-middle" scope='row' = test.title
+  td class="align-middle" = test.category.title
+  td class="align-middle" = test.level
+  td class="align-middle" = test.questions.count
+  td class="align-middle" = button_to t('.start'), start_test_path(test), class: "btn btn-primary"
 
