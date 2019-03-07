@@ -18,6 +18,8 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
 
+
+
   helpers:
     submit:
       test:
@@ -93,6 +95,7 @@ ru:
         delete: "Удалить"
         start: "Начать"
         quest_actions: "Действия"
+        cancel: "Отменить"
 
       new:
         create: "Создать"
@@ -103,6 +106,9 @@ ru:
 
       form:
         submit: "Продолжить"
+
+      form_inline:
+        submit: "Ок"
 
 
     nav:

@@ -3,6 +3,8 @@ h1.white= t('.header')
 = link_to t('.gists'), admin_gists_path, class: 'nav-link'
 = link_to t('.new'), new_admin_test_path, class: 'nav-link'
 
+= render 'shared/errors', resource: @test
+
 .table-responsive.shadow-sm.p-3.mb-5.bg-dark.rounded
   table.table.table-dark.table-bordered.table-hover
     thead.thead-dark

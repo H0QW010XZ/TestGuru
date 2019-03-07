@@ -66,6 +66,7 @@ en:
         actions: "Actions"
         gists: "Gists users"
 
+
       show:
         title: "Title"
         level: "Level"
@@ -91,6 +92,7 @@ en:
         delete: "Delete"
         start: "Start"
         quest_actions: "Actions"
+        cancel: "Cancel"
 
       new:
         create: "Create"
@@ -101,6 +103,9 @@ en:
 
       form:
         submit: "Submit"
+
+      form_inline:
+        submit: "Ok"
 
     nav:
       welcome: "Welcome"
