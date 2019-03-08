@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'faraday'
 gem "octokit"
+gem 'mini_racer'
 
 # Authentication
 gem 'devise'
