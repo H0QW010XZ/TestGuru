@@ -22,7 +22,7 @@ Rails.application.configure do
       user_name:            ENV.fetch('SMTP_USERNAME'),
       password:             ENV.fetch('SMTP_PASS'),
       authentication:       'plain',
-      enable_starttls_auto: true }
+      enable_starttls_auto: true
   }
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
