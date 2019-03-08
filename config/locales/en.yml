@@ -114,6 +114,13 @@ en:
     completed_test:
       subject: "You just completed the TestGuru test!"
 
+  feed_backs:
+    new:
+      header: "Send feedback to administration"
+    create:
+      notice: "We have received your message."
+      alert: "There was an error sending your message. Please try again."
+
   navigation:
     back: "Back"
     confirm: "You are sure?"

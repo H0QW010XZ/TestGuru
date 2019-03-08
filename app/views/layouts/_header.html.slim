@@ -7,6 +7,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
     ul.navbar-nav.mr-auto
       li.nav-item
         = render "shared/lang"
+      li.nav-item
+        = link_to t('.feedback'), new_feed_back_path, class: "nav-link"
       - if user_signed_in?
         li.nav-item
           a.nav-link.active

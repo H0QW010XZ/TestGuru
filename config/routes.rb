@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :feed_backs, only: %i[new create]
+
   namespace :admin do
     resources :gists, only: :index
     resources :tests do

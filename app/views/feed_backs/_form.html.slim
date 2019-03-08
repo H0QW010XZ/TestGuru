@@ -1,0 +1,11 @@
+.row.m-3
+  .col-sm-12.col-md-6
+    = form_with model: @feedback, local: true do |f|
+      = render 'shared/errors', resource: @feedback
+
+      .form-group
+        = f.label :message, class: "white"
+        br
+        = f.text_area :message, cols: 40, rows: 8, class: 'form-control', placeholder: 'message'
+
+      = f.submit class: 'btn btn-primary'
