@@ -1,5 +1,6 @@
-class FeedBack < ApplicationRecord
-  belongs_to :user
+class FeedBack
+  include ActiveModel::Model
+  attr_accessor :name, :email, :message, :id
 
-  validates :message, presence: true
+  validates :name, :email, :message, presence: true
 end

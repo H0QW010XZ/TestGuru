@@ -1,13 +1,15 @@
 class FeedBacksController < ApplicationController
+
+  skip_before_action :authenticate_user!
+
   def new
     @feedback = FeedBack.new
   end
 
   def create
     @feedback = FeedBack.new(feedback_params)
-    @feedback.user = current_user
 
-    if @feedback.save!
+    if @feedback.valid?
       FeedBacksMailer.new_feedback(@feedback).deliver_now
       redirect_to new_feed_back_path
       flash[:notice] = t('.notice')
@@ -20,6 +22,6 @@ class FeedBacksController < ApplicationController
   private
 
   def feedback_params
-    params.require(:feed_back).permit(:message)
+    params.require(:feed_back).permit(:name, :email, :message)
   end
 end
