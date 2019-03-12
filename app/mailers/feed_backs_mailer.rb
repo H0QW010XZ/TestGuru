@@ -1,7 +1,8 @@
 class FeedBacksMailer < ApplicationMailer
+  default to: -> { Admin.pluck(:email) }
   def new_feedback(feedback)
     @feedback = feedback
 
-    mail to: Admin.first.email, subject: "Test-guru feedback message from #{@feedback.name}"
+    mail subject: "Test-guru feedback message from #{@feedback.name}"
   end
 end

@@ -1,10 +1,10 @@
-h1 = question_header(@question)
+h1.white = question_header(@question)
 
 = form_with model: [:admin, @test, @question], local: true do |f|
   = render 'shared/errors', resource: @question
   p
     |
-    = f.label :body
+    = f.label :body, class: "white"
     |
     = f.text_area :body
 

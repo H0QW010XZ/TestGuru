@@ -6,7 +6,7 @@
     => f.label :title, class: "white"
     |
     = f.text_field :title, class: "form-control"
-
+  div id="check_for_test_title"
   .form-group
     |
     => f.label :level, class: "white"
@@ -15,11 +15,12 @@
 
   .form-group
     .dropdown
-      button.btn.btn-secondary.dropdown-toggle type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-        | Select
-    .dropdown-menu aria-labelledby="dropdownMenu2"
-      button.dropdown-item type="button"
-    = f.collection_select :category_id, Category.all, :id, :title, prompt: true
+      = f.collection_select :category_id, Category.all, :id, :title, {prompt: true}, { class: "btn btn-secondary dropdown-toggle",
+                                                                                        type: "button", id: "dropdownMenuButton",
+                                                                                        data_toggle: "dropdown",
+                                                                                        aria_haspopup: true,
+                                                                                        aria_expanded: false }
+        = t('.select')
 
 
   .form-group
