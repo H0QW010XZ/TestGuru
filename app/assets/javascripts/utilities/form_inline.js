@@ -22,6 +22,7 @@ function formInlineLinkHandler(event) {
 }
 
 function formInlineHandler(testId) {
+    // )
     var check_for_test_title = document.querySelector('#check_for_test_title')
 
     if (!check_for_test_title) {
