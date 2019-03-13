@@ -1,0 +1,21 @@
+.row.m-3
+  .col-sm-12.col-md-6
+    = form_with model: @feedback, local: true do |f|
+      = render 'shared/errors', resource: @feedback
+
+      .form-group
+        = f.label :name, class: "white"
+        br
+        = f.text_field :name, autofocus: true, class: 'form-control', placeholder: 'name'
+
+      .form-group
+        = f.label :email, class: "white"
+        br
+        = f.email_field :email, autocomplete: "email", class: 'form-control', placeholder: 'email'
+
+      .form-group
+        = f.label :message, class: "white"
+        br
+        = f.text_area :message, cols: 40, rows: 8, class: 'form-control', placeholder: 'message'
+
+      = f.submit class: 'btn btn-primary'

@@ -2,12 +2,12 @@
   = render 'shared/errors', resource: @answer
   .actions
     p
-      = form.label :body
+      = form.label :body, class: "white"
       br
       = form.text_field :body, id: :answer_body, rows: 7, cols: 60
 
     p
-      = form.label :correct
+      = form.label :correct, class: "white"
       = form.check_box :correct, id: :answer_correct
 
     p
