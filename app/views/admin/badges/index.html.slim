@@ -1,0 +1,8 @@
+h1.white = t('.header')
+
+= link_to t('.create_new'), new_admin_badge_path
+hr
+br
+= render 'shared/errors', resource: @badge
+
+= render partial: 'admin/badges/badge_table', badge: @badges

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   devise_for :users, path_names: { sign_in: :login, sign_out: :logout}
 
+  resources :badges, only: :index
+
   resources :tests, only: :index do
     resources :questions, shallow: true, only: :show do
       resources :answers, shallow: true, only: :show
@@ -30,6 +32,8 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+
+    resources :badges
   end
 
   resources :users, only: :index

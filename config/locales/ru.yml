@@ -49,6 +49,14 @@ ru:
     test:
       start: "Начать"
 
+  badges:
+    badge_table:
+      name: "Название"
+      image_url: "URL картинки"
+      criterion: "Критерий"
+      param: "Параметр"
+      actions: "Действия"
+
   admin:
     gists:
       index:
@@ -68,6 +76,29 @@ ru:
         actions: "Действия"
         gists: "Gists пользователей"
 
+    badges:
+      first_try: "c первой попытки"
+      all_category: "категорию"
+      all_level: "уровень"
+      name: "Название"
+      image_url: "URL картинки"
+      criterion: "Критерий"
+      param: "Параметр"
+      index:
+        header: "Бейджи"
+        create_new: "Создать новый бейдж"
+        badge_table:
+          name: "Название"
+          image_url: "URL картинки"
+          criterion: "Критерий"
+          param: "Параметр"
+          actions: "Действия"
+        badge:
+          edit: "Редактировать"
+          delete: "Удалить"
+          sure: "Вы уверены?"
+        new:
+          header: "Создание бейджа"
 
       show:
         title: "Название"
