@@ -11,6 +11,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
         = link_to t('.feedback'), new_feed_back_path, class: "nav-link"
       - if user_signed_in?
         li.nav-item
+          = link_to t('navigation.badges'), badges_path, class: "nav-link"
+        li.nav-item
           a.nav-link.active
             = t('.welcome')
             |,
