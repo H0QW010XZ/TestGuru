@@ -15,11 +15,11 @@ class UserBadgeService
 
   private
 
-  def all_level?(level_id)
-    if @test.level == level_id.to_i
-      level_tests_ids = Test.where(level: level_id).ids.uniq.sort
-      level_tests_ids == successful_user_tests_ids
-    end
+  def all_level?(id)
+    return if @test.level != id.to_i
+
+    level_tests_ids = Test.where(level: id).ids.uniq.sort
+    level_tests_ids == successful_user_tests_ids
   end
 
   def all_category?(category_id)
@@ -38,6 +38,6 @@ class UserBadgeService
   end
 
   def successful_user_tests_ids
-    @user.test_passages.where("result >= ?", TestPassage::SUCCESS_PERCENTAGES).select(:id, :test_id).distinct.order(:test_id).pluck(:test_id)
+    @user.test_passages.where("result >= ?", TestPassage::SUCCESS_PERCENTAGES).distinct.order(:test_id).pluck(:test_id)
   end
 end
