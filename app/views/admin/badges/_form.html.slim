@@ -1,0 +1,30 @@
+.row.m-3
+  = content_tag :div, id: "data-categories", data: {categories: @categories.pluck(:id, :title)} do
+  = content_tag :div, id: "data-tests", data: {tests: tests_with_any} do
+  = content_tag :div, id: "data-levels", data: {levels: Test.all_levels} do
+  .col-6.col-sm-12.col-md-6
+    = form_with model: [:admin, @badge], local: true do |form|
+      = render 'shared/errors', resource: @badge
+
+      .form-group
+        = form.label :name, class: 'white'
+        br
+        = form.text_field :name, autofocus: true, placeholder: true, class: 'form-control'
+
+      .form-group
+        = form.label :image_url, class: 'white'
+        br
+        = form.text_field :image_url, placeholder: true, class: 'form-control'
+
+      .form-group
+        = form.label :criterion, class: 'white'
+        br
+        = form.select :criterion, criterions_collection, {prompt: t('helpers.select.badge.criterion')}, {class: 'form-control'}
+
+      .form-group.hide id="param"
+        = form.label :param, class: 'white'
+        br
+        select.form-control name="badge[param]" id="badge_param"
+          = options_for_select(Test.all_levels)
+
+      = form.submit class: 'btn btn-primary'

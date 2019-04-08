@@ -53,4 +53,8 @@ class TestPassage < ApplicationRecord
   def correct_answers
     current_question.answers.correct
   end
+
+  def set_result
+    self.result = result_in_percentages
+  end
 end

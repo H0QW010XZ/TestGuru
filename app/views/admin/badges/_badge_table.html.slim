@@ -1,0 +1,12 @@
+.table-responsive.shadow-sm.p-3.mb-5.bg-dark.rounded
+  table.table.table-dark.table-bordered.table-hover
+    thead.thead-dark
+      tr
+        th.white = t('.name')
+        th.white = t('.image_url')
+        th.white = t('.criterion')
+        th.white = t('.param')
+        th.white colspan="2" = t('.actions')
+
+    tbody
+      = render partial: 'admin/badges/badge', collection: @badges

@@ -47,6 +47,14 @@ en:
     test:
       start: "Start"
 
+  badges:
+    badge_table:
+      name: "Badge name"
+      image_url: "Picture URL"
+      criterion: "Criterion"
+      param: "Parameter"
+      actions: "Actions"
+
   admin:
     gists:
       index:
@@ -66,6 +74,28 @@ en:
         actions: "Actions"
         gists: "Gists users"
 
+    badges:
+      first_try: "first try"
+      all_category: "all category"
+      all_level: "all level"
+      name: "Badge ame"
+      image_url: "Picture URL"
+      criterion: "Criterion"
+      param: "Parameter"
+
+      index:
+        header: "Badges"
+        create_new: "Create new badge"
+      badge_table:
+        name: "Badge name"
+        image_url: "Picture URL"
+        criterion: "Criterion"
+        param: "Parameter"
+        actions: "Actions"
+      badge:
+        edit: "Edit"
+        delete: "Delete"
+        sure: "Are You sure?"
 
       show:
         title: "Title"
@@ -128,6 +158,15 @@ en:
     log_in: "Log in"
     log_out: "Log out"
     sign_up: "Sign up"
+    badges: "Manage badges"
+    new:
+      header: "Creating the badge"
+      create:
+        notice: "Badge was created"
+      update:
+        notice: "Badge updated"
+      destroy:
+    notice: "Badge deleted"
 
   git_question_service:
     desc: "A question about %{title} from TestGuru"
