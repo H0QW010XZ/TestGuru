@@ -5,4 +5,6 @@ class Badge < ApplicationRecord
   enum criterions: %i[first_try all_category all_level]
 
   validates :name, :image_url, :criterion, :param, presence: true
+
+  validates :criterion, uniqueness: { scope: :param }
 end

@@ -6,10 +6,14 @@ class UserBadgeService
   end
 
   def give_badges
-    return [] unless @test_passage.successful?
-
     Badge.all.select do |badge|
       send("#{badge.criterion}?".to_sym, badge.param)
+    end
+  end
+
+  def check_badge(badge, user)
+    if send(badge.criterion.to_sym, badge.param.to_i)
+      user.user_badges.push(badge)
     end
   end
 
@@ -18,15 +22,13 @@ class UserBadgeService
   def all_level?(id)
     return if @test.level != id.to_i
 
-    level_tests_ids = Test.where(level: id).ids.uniq.sort
-    level_tests_ids == successful_user_tests_ids
+    level_tests_ids = Test.where(level: level_id.to_i).ids.count
+    level_tests_ids == successful_user_tests
   end
 
   def all_category?(category_id)
-    if @test.category.id == category_id.to_i
-      cat_tests_ids = Category.find(category_id).tests.ids.uniq.sort
-      cat_tests_ids == successful_user_tests_ids
-    end
+    cat_tests_ids = Category.find(category_id.to_i).tests.ids.count
+    cat_tests_ids == successful_user_tests
   end
 
   def first_try?(test_id)
@@ -37,7 +39,7 @@ class UserBadgeService
     @user.test_passages.where(test: test).count == 1
   end
 
-  def successful_user_tests_ids
-    @user.test_passages.where("result >= ?", TestPassage::SUCCESS_PERCENTAGES).distinct.order(:test_id).pluck(:test_id)
+  def successful_user_tests
+    @user.test_passages.select(&:successful?)
   end
 end
