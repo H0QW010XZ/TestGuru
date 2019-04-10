@@ -19,20 +19,22 @@ class UserBadgeService
 
   private
 
-  def all_level?(id)
-    return if @test.level != id.to_i
+  def all_level?(level)
+    return if @test.level != level
 
-    level_tests_ids = Test.where(level: level_id.to_i).ids.count
-    level_tests_ids == successful_user_tests
+    level_tests_ids = Test.where(level: level).ids.sort
+    level_tests_ids == successful_user_tests.where(level: level).ids
   end
 
-  def all_category?(category_id)
-    cat_tests_ids = Category.find(category_id.to_i).tests.ids.count
-    cat_tests_ids == successful_user_tests
+  def all_category?(id)
+    return if @test.category != id
+
+    cat_tests_ids = Test.where(category_id: id).ids.sort
+    cat_tests_ids == successful_user_tests.where(category_id: id).ids
   end
 
-  def first_try?(test_id)
-    (test_id.to_i.zero? || test_id.to_i == @test.id) && not_passed_before?(@test)
+  def first_try?(id)
+    (id.zero? || id == @test.id) && not_passed_before?(@test)
   end
 
   def not_passed_before?(test)
@@ -40,6 +42,6 @@ class UserBadgeService
   end
 
   def successful_user_tests
-    @user.test_passages.select(&:successful?)
+    @user.test_passages.where("result >= ?", TestPassage::SUCCESS_PERCENTAGES).order(:test_id)
   end
 end
