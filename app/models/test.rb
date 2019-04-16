@@ -20,15 +20,15 @@ class Test < ApplicationRecord
         .order(title: :desc)
   }
 
-  scope :successful_by_level, lambda { |level|
+  scope :by_level, lambda { |level|
     joins(:test_passages)
         .where(level: level)
         .order(:id)
   }
 
-  scope :successful_by_category, lambda { |id|
+  scope :by_category, lambda { |category_id|
     joins(:test_passages)
-        .where(category_id: id)
+        .where(category_id: category_id)
         .order(:id)
   }
 

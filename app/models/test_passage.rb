@@ -10,12 +10,16 @@ class TestPassage < ApplicationRecord
 
   validates :score, presence: true
 
-  scope :successful_tests_by_level, lambda { |level|
-    where("result >= ?", SUCCESS_PERCENTAGES) && Test.successful_by_level(level)
+  scope :tests_by_level, lambda { |level|
+    Test.by_level(level)
   }
 
-  scope :successful_tests_by_category, lambda { |id|
-    where("result >= ?", SUCCESS_PERCENTAGES) && Test.successful_by_category(id)
+  scope :tests_by_category, lambda { |category_id|
+    Test.by_category(category_id)
+  }
+
+  scope :successful, lambda {
+    where("result >= ?", SUCCESS_PERCENTAGES)
   }
 
   def accept!(answer_ids)
