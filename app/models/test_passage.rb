@@ -10,14 +10,6 @@ class TestPassage < ApplicationRecord
 
   validates :score, presence: true
 
-  scope :tests_by_level, lambda { |level|
-    Test.by_level(level)
-  }
-
-  scope :tests_by_category, lambda { |category_id|
-    Test.by_category(category_id)
-  }
-
   scope :successful, lambda {
     where("result >= ?", SUCCESS_PERCENTAGES)
   }
