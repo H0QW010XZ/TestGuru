@@ -10,10 +10,6 @@ class TestPassage < ApplicationRecord
 
   validates :score, presence: true
 
-  scope :successful, lambda {
-    where("result >= ?", SUCCESS_PERCENTAGES)
-  }
-
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     set_result
