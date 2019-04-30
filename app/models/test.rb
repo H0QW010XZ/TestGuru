@@ -14,24 +14,6 @@ class Test < ApplicationRecord
   scope :middle_level, -> { where(level: 2..4) }
   scope :hard_level, -> { where(level: 5..Float::INFINITY) }
 
-  scope :tests_by_category, lambda { |category_title|
-    joins(:category)
-        .where(categories: { title: category_title })
-        .order(title: :desc)
-  }
-
-  scope :successful_by_level, lambda { |level|
-    joins(:test_passages)
-        .where(level: level)
-        .order(:id)
-  }
-
-  scope :successful_by_category, lambda { |id|
-    joins(:test_passages)
-        .where(category_id: id)
-        .order(:id)
-  }
-
   def self.by_category(category_title)
     tests_by_category(category_title).pluck(:title)
   end
