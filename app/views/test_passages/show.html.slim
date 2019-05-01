@@ -3,6 +3,9 @@ h1.white
   =<> @test_passage.test.title
   | Test
 
+- unless @test_passage.test.duration.zero?
+  = content_tag :div, id: "timer", class: "white", data: { duration: @test_passage.duration_remain } do
+
 .progress
   = content_tag :div,
           class: 'progress-bar',
@@ -28,7 +31,7 @@ p.h5.white
 
 - 2.times do
     br
-= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form|
+= form_with url: test_passage_path(@test_passage), local: true, id: "answer_form", method: :put do |form|
   = form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b|
 
     .white.form-group

@@ -2,9 +2,14 @@ en:
   test_passages:
     result:
       header: "The %{title} test was completed!"
+      time: "Sorry! Your result is %{result}%, but you spent %{time} seconds. The maximum time to complete this test is %{duration} seconds."
     gist:
       success: "%{hash} gist was successfully created!"
       failure: "An error occurred while saving gist!"
+    show:
+      duration:
+        many: "Duration: %{duration} minutes"
+        one: "Duration: %{duration} minute"
 
   layouts:
     header:
@@ -46,6 +51,8 @@ en:
       actions: "Actions"
     test:
       start: "Start"
+    form:
+      submit: "Submit"
 
   badges:
     badge_table:
@@ -73,6 +80,7 @@ en:
         questions: "Questions"
         actions: "Actions"
         gists: "Gists users"
+
 
     badges:
       first_try: "first try"

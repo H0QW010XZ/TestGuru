@@ -8,13 +8,14 @@ h1.white = @test.title
         th scope="col" = t('.category')
         th scope="col" = t('.level')
         th scope="col" = t('.questions')
+        th scope="col" = t('.duration')
         th scope="col" = t('.actions')
     tbody
       = render @test
 
-= link_to t('.new_question'), new_admin_test_question_path(@test)
+h1.white Questions
 
-h1.white test
+= link_to t('.new_question'), new_admin_test_question_path(@test)
 
 .table-responsive.shadow-sm.p-3.mb-5.bg-dark.rounded
   table.table.table-dark.table-bordered.table-hover

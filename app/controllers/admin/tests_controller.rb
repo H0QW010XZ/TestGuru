@@ -23,6 +23,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def update
+    test_params[:duration] = test_params[:duration] * 60
     if @test.update(test_params)
       redirect_to admin_test_path(@test), notice: t('.success')
     else
@@ -50,7 +51,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :duration)
   end
 
   def set_test

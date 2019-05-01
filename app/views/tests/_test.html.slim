@@ -3,5 +3,9 @@ tr
   td class="align-middle" = test.category.title
   td class="align-middle" = test.level
   td class="align-middle" = test.questions.count
+  - if test.duration.nil?
+    td class="align-middle" = 0
+  - else
+    td class="align-middle" = test.duration / 60
   td class="align-middle" = button_to t('.start'), start_test_path(test), class: "btn btn-primary"
 

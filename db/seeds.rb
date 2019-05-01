@@ -28,15 +28,15 @@ users = User.all
 
 levels = (1..10).to_a
 
-tests = Test.create!([{ title: 'Ruby basics', level: levels.sample, category: ruby, author_id: users.sample.id },
-                      { title: 'Ruby advanced', level: levels.sample, category: ruby, author_id: users.sample.id },
-                      { title: 'Ruby core', level: levels.sample, category: ruby, author_id: users.sample.id },
-                      { title: 'HTML basics', level: levels.sample, category: html, author_id: users.sample.id },
-                      { title: 'HTML forms', level: levels.sample, category: html, author_id: users.sample.id },
-                      { title: 'HTML canvas', level: levels.sample, category: html, author_id: users.sample.id },
-                      { title: 'CSS basics', level: levels.sample, category: css, author_id: users.sample.id },
-                      { title: 'CSS flexbox', level: levels.sample, category: css, author_id: users.sample.id },
-                      { title: 'CSS grid', level: levels.sample, category: css, author_id: users.sample.id }
+tests = Test.create!([{ title: 'Ruby basics', level: levels.sample, category: ruby, author_id: users.sample.id, duration: 0 },
+                      { title: 'Ruby advanced', level: levels.sample, category: ruby, author_id: users.sample.id, duration: 0 },
+                      { title: 'Ruby core', level: levels.sample, category: ruby, author_id: users.sample.id, duration: 0 },
+                      { title: 'HTML basics', level: levels.sample, category: html, author_id: users.sample.id, duration: 0 },
+                      { title: 'HTML forms', level: levels.sample, category: html, author_id: users.sample.id, duration: 0 },
+                      { title: 'HTML canvas', level: levels.sample, category: html, author_id: users.sample.id, duration: 0 },
+                      { title: 'CSS basics', level: levels.sample, category: css, author_id: users.sample.id, duration: 0 },
+                      { title: 'CSS flexbox', level: levels.sample, category: css, author_id: users.sample.id, duration: 0 },
+                      { title: 'CSS grid', level: levels.sample, category: css, author_id: users.sample.id, duration: 0 }
                     ])
 
 questions = 4

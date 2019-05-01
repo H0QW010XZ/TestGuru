@@ -13,8 +13,11 @@ p.white
     | , you passed the test.
 - else
   h2.white
-    | Your result is
+    | Your results are
+    br
     span.fail =<> result_message(@test_passage)
+    br
+    span.fail =<> t('.time', result: @test_passage.score, time: @test_passage.passage_duration, duration: @test_passage.test.duration)
     |, you failed the test.
 
 = link_to 'Back', root_path
