@@ -37,7 +37,7 @@ class TestPassage < ApplicationRecord
   end
 
   def passage_duration
-    (Time.current - self.created_at).to_i
+    (Time.current - created_at).to_i
   end
 
   def duration_remain

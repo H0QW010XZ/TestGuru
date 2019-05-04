@@ -11,6 +11,7 @@ class Test < ApplicationRecord
   validates :level, :duration, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   before_save :set_duration
+  before_create :set_duration
 
   scope :easy_level, -> { where(level: 0..1) }
   scope :middle_level, -> { where(level: 2..4) }
