@@ -11,6 +11,10 @@ tr
   td class='align-middle' = test.category.title
   td class='align-middle' = test.level
   td class='align-middle' = test.questions.count
+  - if test.duration.nil?
+    td class="align-middle" = 0
+  - else
+    td class="align-middle" = test.duration / 60
   td class='align-middle'
     => link_to t('.show'), admin_test_path(test), class: "text-decoration-none"
     |
@@ -18,7 +22,7 @@ tr
             data: { test_id: test.id },
             class: "text-decoration-none form-inline-link"
     |
-    => link_to t('.delete'), admin_test_path(test), method: :delete, data: {confirm: t('navigation.confirm')}, class: "text-decoration-none"
+    => link_to t('.delete'), admin_test_path(test), method: :delete, data: { confirm: t('navigation.confirm') }, class: "text-decoration-none"
 
 
 

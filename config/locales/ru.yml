@@ -2,9 +2,16 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+      time: "Сожалеем! Ваш результат %{result}%, но вы затратили на прохождение %{time} секунд. Максимальное время на прохождение этого теста %{duration} секунд."
     gist:
       success: "%{hash} gist успешно сохранен!"
       failure: "Во время сохранения gist произошда ошибка"
+    show:
+      duration:
+        few: "Продолжительность: %{duration} минуты"
+        many: "Продолжительность: %{duration} минут"
+        one: "Продолжительность: %{duration} минута"
+        other: "Продолжительность: %{duration} минут"
 
   layouts:
     header:
@@ -75,6 +82,8 @@ ru:
         questions: "Вопросы"
         actions: "Действия"
         gists: "Gists пользователей"
+      form:
+        submit: "Продолжить"
 
     badges:
       first_try: "c первой попытки"

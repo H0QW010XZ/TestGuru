@@ -11,9 +11,13 @@ class TestPassage < ApplicationRecord
   validates :score, presence: true
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
-    set_result
-    save!
+    if in_time?
+      self.correct_questions += 1 if correct_answer?(answer_ids)
+      set_result
+      save!
+    else
+      self.current_question = nil
+    end
   end
 
   def completed?
@@ -29,7 +33,21 @@ class TestPassage < ApplicationRecord
   end
 
   def successful?
-    result_in_percentages >= SUCCESS_PERCENTAGES if completed?
+    in_time? && result_in_percentages >= SUCCESS_PERCENTAGES if completed?
+  end
+
+  def passage_duration
+    (Time.current - created_at).to_i
+  end
+
+  def duration_remain
+    test.duration - passage_duration
+  end
+
+  def in_time?
+    duration = test.duration
+
+    duration.zero? || passage_duration <= duration
   end
 
 
