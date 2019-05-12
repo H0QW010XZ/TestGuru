@@ -2,11 +2,11 @@
   table.table.table-dark.table-bordered.table-hover
     thead.thead-dark
       tr
-        th.white = t('.name')
-        th.white = t('.image_url')
-        th.white = t('.criterion')
-        th.white = t('.param')
-        th.white colspan="2" = t('.actions')
+        th.white = t('admin.badges.index.badge_table.name')
+        th.white = t('admin.badges.index.badge_table.image_url')
+        th.white = t('admin.badges.index.badge_table.criterion')
+        th.white = t('admin.badges.index.badge_table.param')
+        th.white colspan="2" = t('admin.badges.index.badge_table.actions')
 
     tbody
       = render partial: 'admin/badges/badge', collection: @badges

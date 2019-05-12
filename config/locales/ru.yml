@@ -16,6 +16,7 @@ ru:
   layouts:
     header:
       welcome: "Добро пожаловать"
+      feedback: "Обратная связь"
 
   shared:
     errors:
@@ -53,6 +54,7 @@ ru:
       category: "Категория"
       questions: "Вопросы"
       actions: "Действия"
+      duration: "Длительность"
     test:
       start: "Начать"
 
@@ -73,6 +75,9 @@ ru:
         user: "Пользователь"
 
     tests:
+      form_inline:
+        submit: "Подтвердить"
+
       index:
         header: "Доступные тесты"
         new: "Новый тест"
@@ -82,6 +87,13 @@ ru:
         questions: "Вопросы"
         actions: "Действия"
         gists: "Gists пользователей"
+        duration: "Длительность"
+
+      test:
+        show: "показать"
+        edit: "редактировать"
+        delete: "удалить"
+
       form:
         submit: "Продолжить"
 
@@ -93,15 +105,18 @@ ru:
       image_url: "URL картинки"
       criterion: "Критерий"
       param: "Параметр"
+      badges: "Бейджи"
+
       index:
         header: "Бейджи"
         create_new: "Создать новый бейдж"
+
         badge_table:
           name: "Название"
           image_url: "URL картинки"
           criterion: "Критерий"
           param: "Параметр"
-          actions: "Действия"
+          actions: "Дейтсвия"
         badge:
           edit: "Редактировать"
           delete: "Удалить"
